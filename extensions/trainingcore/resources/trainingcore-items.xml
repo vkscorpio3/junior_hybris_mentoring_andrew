@@ -19,7 +19,6 @@
 		                type="set"/>
 	</collectiontypes>
 
-
 	<enumtypes>
 		<enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
 			<value code="BLACK"/>
@@ -37,11 +36,61 @@
 		</enumtype>
 	</enumtypes>
 
+	<relations>
+		<relation code="Customer2OrganisationRelation" autocreate="true" generate="true" localized="false">
+			<deployment table="Customer2OrganisationRel" typecode="10101" />
+    		<sourceElement qualifier="customers" type="Customer" cardinality="many">
+    		   <description>Customers</description>
+    			<modifiers read="true" write="true" search="true" optional="true"/>
+    		</sourceElement>
+    		<targetElement qualifier="organisations" type="Organisation" cardinality="many">
+    		   <description>Organisations</description>
+    			<modifiers read="true" write="true" search="true" optional="true"/>
+    		</targetElement>
+    	</relation>
+	</relations>
+	
 	<itemtypes>
 
 		<!-- Add your item definitions here -->
 
-
+		<itemtype code="Customer" autocreate="false" generate="false">
+			<attributes>
+				<attribute	qualifier="status" type="java.lang.Boolean">
+					<description>Indicates if account is locked or not</description>
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" />
+					<defaultvalue>Boolean.FALSE</defaultvalue>
+				</attribute>
+				<attribute	qualifier="attemptCount" type="java.lang.Integer">
+					<description>It indicates how many times user entered incorrect password successively</description>
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		
+		<itemtype code="Organisation" autocreate="true"  generate="true">
+			<attributes>
+				<attribute	qualifier="id" type="java.lang.Integer">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="false" />
+				</attribute>
+				<attribute	qualifier="name" type="localized:java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="false" />
+				</attribute>
+				<attribute	qualifier="phone" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="false" />
+				</attribute>
+				<attribute	qualifier="email" type="java.lang.String">
+					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+		
 		<!-- TypeGroups are for structure of this file only -->
 
 		<typegroup name="Apparel">
