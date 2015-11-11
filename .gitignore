@@ -1,0 +1,48 @@
+# training module
+
+# file types
+*.war
+*.ear
+*.jar
+*.class
+
+# Eclipse generated
+.settings/*
+.externalToolBuilders/*
+.classpath
+.pmd
+.project
+.springBeans
+
+# Hybris generated
+extensioninfo.xsd
+build.xml
+beans.xsd
+items.xsd
+platformhome.properties
+
+**/eclipsebin/**
+**/classes/**
+**/gensrc/**
+**/testclasses/**
+
+trainingcockpits-webtestclasses.xml
+trainingcockpits-testclasses.xml
+
+trainingcore-webtestclasses.xml
+trainingcore-testclasses.xml
+
+trainingfacades-webtestclasses.xml
+trainingfacades-testclasses.xml
+
+traininginitialdata-webtestclasses.xml
+traininginitialdata-testclasses.xml
+
+trainingstorefront-webtestclasses.xml
+trainingstorefront-testclasses.xml
+
+trainingtest-webtestclasses.xml
+trainingtest-testclasses.xml
+
+trainingfulfilmentprocess-webtestclasses.xml
+trainingfulfilmentprocess-testclasses.xml
