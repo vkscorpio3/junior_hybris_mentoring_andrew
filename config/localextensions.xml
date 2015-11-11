@@ -73,6 +73,7 @@
 		<extension name="acceleratorstorefrontcommons" />
 				
 		<!-- custom-training-extension -->
+		<extension name="training" />	
 		<extension name="trainingstorefront" />	
 		<extension name="trainingfacades" />
 		<extension name="trainingcore" /> 	
